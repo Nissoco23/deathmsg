@@ -2,3 +2,6 @@ name: deathmsg
 version: '1.0'
 main: com.nissoco.deathmsg.Deathmsg
 api-version: '1.21'
+author: Nissoco
+website: https://nissoco.com
+description: Unstable Universe type death messages without the headache of kicking and banning people.
