@@ -6,12 +6,11 @@ public final class Deathmsg extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        getServer().getPluginManager().registerEvents(new DeathListener(), this);
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        System.out.println("Deathmsg has been disabled");
     }
 }
