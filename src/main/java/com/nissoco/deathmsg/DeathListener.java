@@ -24,12 +24,14 @@ public class DeathListener implements Listener {
 
         if (msg == null) return;
 
+        dead.sendMessage(msg);
+
         for (Player p : dead.getWorld().getPlayers()) {
             if (p.equals(dead)) continue;
 
             if (p.getLocation().distanceSquared(deathLoc) <= RADIUS * RADIUS) {
                 p.sendMessage(msg);
-                p.sendMessage(ChatColor.YELLOW + dead.name().toString() + " left the game");
+                p.sendMessage(ChatColor.YELLOW + dead.getName() + " left the game");
             }
 
         }
