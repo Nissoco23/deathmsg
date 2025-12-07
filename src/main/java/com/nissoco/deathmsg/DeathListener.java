@@ -1,5 +1,7 @@
 package com.nissoco.deathmsg;
 
+import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,6 +20,8 @@ public class DeathListener implements Listener {
         String msg = event.getDeathMessage();
         event.setDeathMessage(null);
 
+        dead.setGameMode(GameMode.SPECTATOR);
+
         if (msg == null) return;
 
         for (Player p : dead.getWorld().getPlayers()) {
@@ -25,7 +29,9 @@ public class DeathListener implements Listener {
 
             if (p.getLocation().distanceSquared(deathLoc) <= RADIUS * RADIUS) {
                 p.sendMessage(msg);
+                p.sendMessage(ChatColor.YELLOW + dead.name().toString() + " left the game");
             }
+
         }
     }
 }
