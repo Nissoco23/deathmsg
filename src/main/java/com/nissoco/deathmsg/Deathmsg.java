@@ -14,3 +14,5 @@ public final class Deathmsg extends JavaPlugin {
         System.out.println("Deathmsg has been disabled");
     }
 }
+
+
